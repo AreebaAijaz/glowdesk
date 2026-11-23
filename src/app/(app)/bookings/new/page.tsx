@@ -403,8 +403,9 @@ export default function NewBookingPage() {
             </p>
             <p className="whitespace-nowrap text-lg font-semibold">Due {rs(due)}</p>
           </div>
-          <Button size="lg" className="shrink-0 whitespace-nowrap" onClick={save} loading={saving} disabled={!canSave}>
-            Book appointment
+          <Button size="lg" className="shrink-0 whitespace-nowrap px-4 sm:px-5" onClick={save} loading={saving} disabled={!canSave}>
+            <span className="min-[360px]:hidden">Book</span>
+            <span className="hidden min-[360px]:inline">Book appointment</span>
           </Button>
         </Card>
         <div className="mt-2">

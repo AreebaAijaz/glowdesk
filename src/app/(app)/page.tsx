@@ -149,11 +149,11 @@ export default function CalendarPage() {
       <div className="mb-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
         <Card className="p-4">
           <p className="text-xs text-muted">Bookings</p>
-          <p className="mt-1 text-2xl font-semibold">{bookingCount}</p>
+          <p className="mt-1 whitespace-nowrap text-xl font-semibold sm:text-2xl">{bookingCount}</p>
         </Card>
         <Card className="p-4">
           <p className="text-xs text-muted">Sales this day</p>
-          <p className="mt-1 text-2xl font-semibold">{rs(expected)}</p>
+          <p className="mt-1 whitespace-nowrap text-xl font-semibold sm:text-2xl">{rs(expected)}</p>
         </Card>
         <Link href={`/bookings/new?date=${date}`} className="col-span-2 flex items-center justify-center gap-2 rounded-2xl bg-peach-300 p-4 font-medium hover:bg-peach-400 sm:col-span-1">
           <Plus className="size-5" /> New booking

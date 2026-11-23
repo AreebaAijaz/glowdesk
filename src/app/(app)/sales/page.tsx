@@ -154,7 +154,7 @@ export default function SalesPage() {
             </Card>
             <Card className="p-5">
               <p className="text-sm text-muted">Cash received {isToday ? "today" : "this day"}</p>
-              <p className="mt-1 text-2xl font-semibold">{rs(cashIn.total)}</p>
+              <p className="mt-1 whitespace-nowrap text-2xl font-semibold">{rs(cashIn.total)}</p>
               <p className="mt-1 truncate text-xs text-muted">
                 {cashIn.total
                   ? Array.from(cashIn.byMethod.entries())
@@ -165,14 +165,14 @@ export default function SalesPage() {
             </Card>
             <Card className="p-5">
               <p className="text-sm text-muted">Total due</p>
-              <p className={cn("mt-1 text-2xl font-semibold", totalDue.amount > 0 && "text-peach-600")}>{rs(totalDue.amount)}</p>
+              <p className={cn("mt-1 whitespace-nowrap text-2xl font-semibold", totalDue.amount > 0 && "text-peach-600")}>{rs(totalDue.amount)}</p>
               <p className="mt-1 text-xs text-muted">
                 From {totalDue.count} open {totalDue.count === 1 ? "booking" : "bookings"}
               </p>
             </Card>
             <Card className="p-5">
               <p className="text-sm text-muted">{monthName} sales</p>
-              <p className="mt-1 text-2xl font-semibold">{rs(monthDone)}</p>
+              <p className="mt-1 whitespace-nowrap text-2xl font-semibold">{rs(monthDone)}</p>
               <p className="mt-1 text-xs text-muted">
                 {change !== null && <span className={change >= 0 ? "text-emerald-700" : "text-red-600"}>{change >= 0 ? "▲" : "▼"} {Math.abs(change)}% vs {isCurrentMonth ? "same days last month" : "last month"} · </span>}
                 {monthUpcoming > 0 ? `done · ${rs(monthUpcoming)} upcoming` : "done so far"}

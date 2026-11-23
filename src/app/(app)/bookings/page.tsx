@@ -117,19 +117,19 @@ export default function BookingsPage() {
           <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
             <Card className="p-4">
               <p className="text-xs text-muted">Bookings</p>
-              <p className="mt-1 text-xl font-semibold">{list.length}</p>
+              <p className="mt-1 whitespace-nowrap text-lg font-semibold sm:text-xl">{list.length}</p>
             </Card>
             <Card className="p-4">
               <p className="text-xs text-muted">Total value</p>
-              <p className="mt-1 text-xl font-semibold">{rs(totalValue)}</p>
+              <p className="mt-1 whitespace-nowrap text-lg font-semibold sm:text-xl">{rs(totalValue)}</p>
             </Card>
             <Card className="p-4">
               <p className="text-xs text-muted">Received</p>
-              <p className="mt-1 text-xl font-semibold">{rs(received)}</p>
+              <p className="mt-1 whitespace-nowrap text-lg font-semibold sm:text-xl">{rs(received)}</p>
             </Card>
             <Card className="p-4">
               <p className="text-xs text-muted">Due</p>
-              <p className={cn("mt-1 text-xl font-semibold", due > 0 && "text-peach-600")}>{rs(due)}</p>
+              <p className={cn("mt-1 whitespace-nowrap text-lg font-semibold sm:text-xl", due > 0 && "text-peach-600")}>{rs(due)}</p>
             </Card>
           </div>
 

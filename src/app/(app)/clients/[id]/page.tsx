@@ -82,11 +82,11 @@ export default function ClientPage() {
             <p className="text-xs text-muted">Visits done</p>
           </div>
           <div>
-            <p className="text-xl font-semibold">{rs(paid)}</p>
+            <p className="whitespace-nowrap text-lg font-semibold sm:text-xl">{rs(paid)}</p>
             <p className="text-xs text-muted">Paid</p>
           </div>
           <div>
-            <p className={`text-xl font-semibold ${due > 0 ? "text-peach-600" : ""}`}>{rs(due)}</p>
+            <p className={`whitespace-nowrap text-lg font-semibold sm:text-xl ${due > 0 ? "text-peach-600" : ""}`}>{rs(due)}</p>
             <p className="text-xs text-muted">Due</p>
           </div>
           <div>
