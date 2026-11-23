@@ -397,13 +397,13 @@ export default function NewBookingPage() {
 
       <div className="sticky bottom-20 z-20 mt-4 md:bottom-4">
         <Card className="flex items-center gap-3 p-3 shadow-[0_8px_30px_-12px_rgba(42,37,35,0.18)]">
-          <div className="flex-1 pl-1">
-            <p className="text-xs text-muted">
-              {items.length} {items.length === 1 ? "service" : "services"} · Total {rs(total)}
+          <div className="min-w-0 flex-1 pl-1">
+            <p className="whitespace-nowrap text-xs text-muted">
+              <span className="hidden sm:inline">{items.length} {items.length === 1 ? "service" : "services"} · </span>Total {rs(total)}
             </p>
-            <p className="text-lg font-semibold">Due {rs(due)}</p>
+            <p className="whitespace-nowrap text-lg font-semibold">Due {rs(due)}</p>
           </div>
-          <Button size="lg" onClick={save} loading={saving} disabled={!canSave}>
+          <Button size="lg" className="shrink-0 whitespace-nowrap" onClick={save} loading={saving} disabled={!canSave}>
             Book appointment
           </Button>
         </Card>

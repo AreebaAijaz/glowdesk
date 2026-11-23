@@ -52,22 +52,22 @@ export default function StaffPage() {
           return (
             <Card key={level.id} className="p-4">
               <div className="flex items-center justify-between gap-2">
-                <button onClick={() => setOpen((o) => ({ ...o, [level.id]: !o[level.id] }))} className="flex flex-1 items-center gap-2 text-left cursor-pointer">
+                <button onClick={() => setOpen((o) => ({ ...o, [level.id]: !o[level.id] }))} className="flex min-w-0 flex-1 items-center gap-2 text-left cursor-pointer">
                   {open[level.id] ? <ChevronDown className="size-4 text-muted" /> : <ChevronRight className="size-4 text-muted" />}
-                  <h2 className="font-semibold">{level.name}</h2>
+                  <h2 className="truncate font-semibold">{level.name}</h2>
                   <Badge tone="peach">
                     {activeCount > 0 ? `${activeCount} ${activeCount === 1 ? "person" : "people"}` : level.headcount ? `${level.headcount} (headcount)` : "No one yet"}
                   </Badge>
                 </button>
-                <div className="flex gap-1">
+                <div className="flex shrink-0 gap-1">
                   <Button variant="ghost" size="sm" onClick={() => setLevelModal(level)} aria-label="Edit level">
                     <Pencil className="size-4" />
                   </Button>
                   <Button variant="secondary" size="sm" onClick={() => {
                       setOpen((o) => ({ ...o, [level.id]: true }));
                       setStaffModal({ level_id: level.id, name: "", active: true });
-                    }}>
-                    <Plus className="size-4" /> Person
+                    }} aria-label="Add person">
+                    <Plus className="size-4" /> <span className="hidden sm:inline">Person</span>
                   </Button>
                 </div>
               </div>

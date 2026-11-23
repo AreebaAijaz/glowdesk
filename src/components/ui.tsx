@@ -16,7 +16,7 @@ export function Button({ variant = "primary", size = "md", loading, className, c
       {...rest}
       disabled={disabled || loading}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer",
+        "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer",
         size === "sm" && "h-9 px-3 text-sm",
         size === "md" && "h-11 px-4 text-[15px]",
         size === "lg" && "h-13 px-6 text-base",
@@ -71,8 +71,8 @@ export function Card({ className, children }: { className?: string; children: Re
 
 export function PageHeader({ title, subtitle, action }: { title: string; subtitle?: string; action?: React.ReactNode }) {
   return (
-    <div className="mb-5 flex items-start justify-between gap-3">
-      <div>
+    <div className="mb-5 flex flex-wrap items-start justify-between gap-3">
+      <div className="min-w-0 flex-1 basis-60">
         <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
         {subtitle && <p className="mt-0.5 text-sm text-muted">{subtitle}</p>}
       </div>
@@ -95,7 +95,7 @@ export function Badge({ tone = "neutral", children }: { tone?: "neutral" | "peac
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium",
+        "inline-flex shrink-0 items-center whitespace-nowrap rounded-full px-2 py-0.5 text-xs font-medium",
         tone === "neutral" && "bg-canvas text-muted border border-line",
         tone === "peach" && "bg-peach-100 text-peach-700",
         tone === "green" && "bg-emerald-50 text-emerald-700",

@@ -78,10 +78,10 @@ export default function ServicesPage() {
             return (
               <Card key={sec.id} className="overflow-hidden">
                 <div className="flex items-center gap-2 p-3 pl-4">
-                  <button onClick={() => toggle(sec.id)} className="flex flex-1 items-center gap-2.5 text-left cursor-pointer">
+                  <button onClick={() => toggle(sec.id)} className="flex min-w-0 flex-1 items-center gap-2.5 text-left cursor-pointer">
                     {isOpen ? <ChevronDown className="size-4 text-muted" /> : <ChevronRight className="size-4 text-muted" />}
-                    <FolderOpen className="size-4 text-peach-500" />
-                    <span className="font-semibold">{sec.title}</span>
+                    <FolderOpen className="size-4 shrink-0 text-peach-500" />
+                    <span className="truncate font-semibold">{sec.title}</span>
                     <Badge tone="peach">
                       {sec.items.length} {sec.items.length === 1 ? "service" : "services"}
                     </Badge>
@@ -94,12 +94,14 @@ export default function ServicesPage() {
                   <Button
                     variant="secondary"
                     size="sm"
+                    className="shrink-0"
+                    aria-label="Add service"
                     onClick={() => {
                       setOpen((o) => ({ ...o, [sec.id]: true }));
                       setCatModal({ name: "", group_id: sec.group?.id ?? null });
                     }}
                   >
-                    <Plus className="size-4" /> Service
+                    <Plus className="size-4" /> <span className="hidden sm:inline">Service</span>
                   </Button>
                 </div>
 
@@ -118,19 +120,20 @@ export default function ServicesPage() {
                                 {prices.length === 0 ? "No price yet" : prices.length === 1 ? rs(prices[0].price) : `${prices.length} prices · from ${rs(Math.min(...prices.map((p) => p.price)))}`}
                               </span>
                             </button>
-                            <div className="flex gap-1">
+                            <div className="flex shrink-0 gap-1">
                               <Button variant="ghost" size="sm" onClick={() => setCatModal(c)} aria-label="Edit service">
                                 <Pencil className="size-4" />
                               </Button>
                               <Button
                                 variant="secondary"
                                 size="sm"
+                                aria-label="Add price"
                                 onClick={() => {
                                   setOpen((o) => ({ ...o, [`cat-${c.id}`]: true }));
                                   setSvcModal({ category_id: c.id, name: "", price: 0, active: true });
                                 }}
                               >
-                                <Plus className="size-4" /> Price
+                                <Plus className="size-4" /> <span className="hidden sm:inline">Price</span>
                               </Button>
                             </div>
                           </div>

@@ -283,7 +283,8 @@ export default function SalesPage() {
             {allDays.filter((d) => d.bookings > 0).length === 0 ? (
               <p className="px-4 py-6 text-center text-sm text-muted">No bookings in {monthName} yet.</p>
             ) : (
-              <table className="w-full text-sm">
+              <div className="overflow-x-auto">
+              <table className="w-full whitespace-nowrap text-sm">
                 <thead>
                   <tr className="text-left text-xs text-muted">
                     <th className="px-4 py-2 font-normal">Day</th>
@@ -319,6 +320,7 @@ export default function SalesPage() {
                   </tr>
                 </tfoot>
               </table>
+              </div>
             )}
           </Card>
         </>
