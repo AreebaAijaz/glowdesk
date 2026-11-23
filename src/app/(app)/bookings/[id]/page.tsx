@@ -205,7 +205,7 @@ export default function BookingPage() {
             <Button variant="secondary" onClick={() => setMoveOpen(true)}>
               <CalendarClock className="size-4" /> Change date & time
             </Button>
-            <Button variant="secondary" onClick={() => setStatus("no_show")} disabled={busy} className="h-auto min-h-11 whitespace-normal py-2 text-center sm:col-span-2">
+            <Button variant="secondary" onClick={() => setStatus("no_show")} disabled={busy} className="h-auto! min-h-11 whitespace-normal! py-2 text-center sm:col-span-2">
               <UserX className="size-4" /> Client didn&apos;t come (no-show)
             </Button>
             {confirmCancel ? (
@@ -225,12 +225,12 @@ export default function BookingPage() {
           </Button>
         )}
         {lost && (
-          <Button variant="ghost" onClick={() => setStatus("booked")} disabled={busy} className="h-auto min-h-11 whitespace-normal py-2 text-center sm:col-span-2">
+          <Button variant="ghost" onClick={() => setStatus("booked")} disabled={busy} className="h-auto! min-h-11 whitespace-normal! py-2 text-center sm:col-span-2">
             <RotateCcw className="size-4" /> Reopen booking (keeps the advance)
           </Button>
         )}
         {b.status === "completed" && paidToday && (
-          <Button variant="ghost" onClick={() => call("undo_complete", { p_booking: id })} disabled={busy} className="h-auto min-h-11 whitespace-normal py-2 text-center sm:col-span-2">
+          <Button variant="ghost" onClick={() => call("undo_complete", { p_booking: id })} disabled={busy} className="h-auto! min-h-11 whitespace-normal! py-2 text-center sm:col-span-2">
             <RotateCcw className="size-4" /> Undo &quot;Done&quot; (only possible today)
           </Button>
         )}
