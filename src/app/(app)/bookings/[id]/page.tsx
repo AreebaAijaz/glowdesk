@@ -142,33 +142,33 @@ export default function BookingPage() {
           ))}
         </ul>
         <div className="mt-2 space-y-1.5 border-t border-line pt-3 text-[15px]">
-          <div className="flex justify-between font-semibold">
+          <div className="flex justify-between gap-3 font-semibold">
             <span>Total</span>
             <span>{rs(total)}</span>
           </div>
           {advance > 0 && (
-            <div className="flex justify-between text-muted">
+            <div className="flex justify-between gap-3 text-muted">
               <span>Advance paid{b.advance_method ? ` (${methodLabel(b.advance_method)})` : ""}</span>
-              <span>− {rs(advance)}</span>
+              <span className="shrink-0 whitespace-nowrap">− {rs(advance)}</span>
             </div>
           )}
           {b.paid_at && Number(b.paid_amount) > 0 && (
-            <div className="flex justify-between text-muted">
+            <div className="flex justify-between gap-3 text-muted">
               <span>
                 Paid at visit ({methodLabel(b.payment_method)}) · {fmtTime(b.paid_at)}
               </span>
-              <span>− {rs(b.paid_amount)}</span>
+              <span className="shrink-0 whitespace-nowrap">− {rs(b.paid_amount)}</span>
             </div>
           )}
           {b.status === "completed" && discount > 0 && (
-            <div className="flex justify-between text-muted">
+            <div className="flex justify-between gap-3 text-muted">
               <span>Discount (paid less than due)</span>
-              <span>− {rs(discount)}</span>
+              <span className="shrink-0 whitespace-nowrap">− {rs(discount)}</span>
             </div>
           )}
           {lost ? (
             <div className="space-y-1 border-t border-line pt-2">
-              <div className="flex justify-between text-lg font-semibold">
+              <div className="flex justify-between gap-3 text-lg font-semibold">
                 <span>Advance kept</span>
                 <span>{rs(advance)}</span>
               </div>

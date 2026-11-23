@@ -3,7 +3,7 @@ title Glowdesk - publish update
 cd /d D:\GlowDesk
 echo Publishing the latest changes to GitHub. Vercel will update the live site in about 1 minute.
 git add -A
-git commit -m "Booking page buttons wrap on small phones"
+git commit -m "Tablet width and booking amounts fit"
 git push
 echo.
 if errorlevel 1 (echo PUSH FAILED - tell Claude.) else (echo DONE - tell Claude "pushed".)
